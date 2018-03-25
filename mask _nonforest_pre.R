@@ -1,0 +1,28 @@
+#### R code to mask the non-forest area based on LC map for Bh12v11
+
+setwd("/projectnb/landsat/projects/ABOVE/CCDC/Bh12v11/out_tc")
+
+## load raster packages
+library(rgdal)
+library(raster)
+
+tc_dir = "/projectnb/landsat/projects/ABOVE/CCDC/Bh12v11/out_tc_pre"
+LC_1985_map = '/projectnb/landsat/users/shijuan/above/bh12v11/LCmap/Bh12v11_1985_tc_20180219_k25_mn_sub_pam_rf_remap.tif'
+output_dir = "/projectnb/landsat/projects/ABOVE/CCDC/Bh12v11/out_tc_Forest/"
+tile_name = 'Bh12v11'
+
+file_name = paste0(tile_name, '_dTC_F_')
+ras_list <- list.files(tc_dir,pattern="*.tif$", full.names=T) # 29 files in total
+
+# read 1985 LC map
+LC <- stack(LC_1985_map)
+
+LC[LC > 3] <- NA
+
+for (i in 1:29){
+  layers = stack(ras_list[i])
+  TC_forest <- mask(layers, LC)
+  year = 1984 + i
+  filename = paste0(output_dir,file_name,as.character(year),".tif",sep="")
+  writeRaster(TC_forest,filename,format="GTiff", overwrite=TRUE)  
+} 
