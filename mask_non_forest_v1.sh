@@ -10,7 +10,7 @@
 #$ -m e
 
 #Load modules:
-module load R/R-3.1.0
+module load R/R-3.1.1
 
 #Run the program
 Rscript /usr3/graduate/shijuan/Desktop/my_ABOVE_git/mask _nonforest_pre.R
