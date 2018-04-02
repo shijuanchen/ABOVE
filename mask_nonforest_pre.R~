@@ -1,8 +1,8 @@
 #### R code to mask the non-forest area based on LC map for Bh12v11
 
 ## load raster packages
-#if(!require(rgdal)) install.packages('rgdal',repos = "http://cran.us.r-project.org")
-#if(!require(raster)) install.packages('raster',,repos = "http://cran.us.r-project.org")
+if(!require(rgdal)) install.packages('rgdal',repos = "http://cran.us.r-project.org")
+if(!require(raster)) install.packages('raster',,repos = "http://cran.us.r-project.org")
 library(rgdal)
 library(raster)
 
