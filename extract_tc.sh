@@ -11,7 +11,6 @@
 
 #Load modules:
 module purge
-module load 
 module load R/3.3.0
 module load gdal/1.11.3
 
