@@ -13,6 +13,7 @@ shp_name = "training_sample" # no .shp
 
 # read the shapefile
 pts_df = readOGR(shp_file, shp_name)
+out_tab[,c(1:1)] = c(pts_df['id'])
 
 db_ras = raster(dtc_file,band=1)
 out_tab[,1] <- extract(db_ras,pts_df)

@@ -6,10 +6,10 @@
 library(rgdal)
 library(raster)
 
-tc_dir = "/projectnb/landsat/projects/ABOVE/CCDC/Bh12v11/out_tc_pre"
-LC_1985_map = '/projectnb/landsat/users/shijuan/above/bh12v11/LCmap/Bh12v11_1985_tc_20180219_k25_mn_sub_pam_rf_remap.tif'
-output_dir = "/projectnb/landsat/projects/ABOVE/CCDC/Bh12v11/out_tc_Forest/"
-tile_name = 'Bh12v11'
+tc_dir = "/projectnb/landsat/projects/ABOVE/CCDC/Bh09v15/out_tc_pre"
+LC_1985_map = '/projectnb/landsat/users/shijuan/above/bh09v15/LCmap/Bh09v15_1985_tc_20180219_k25_mn_sub_pam_rf_remap.tif'
+output_dir = "/projectnb/landsat/projects/ABOVE/CCDC/Bh09v15/out_tc_Forest/"
+tile_name = 'Bh09v15'
 
 file_name = paste0(tile_name, '_dTC_F_')
 ras_list <- list.files(tc_dir,pattern="*.tif$", full.names=T) # 29 files in total
