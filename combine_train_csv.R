@@ -1,19 +1,19 @@
-5# This script reorganize the csv data sheets. 
+# This script reorganize the csv data sheets. 
 rm(list=ls())
-tc_csv_path = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v2/Bh09v15_tc.csv"
-interpt_csv_path = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v2/Bh09v15_training_sample.csv"
-out_csv_path = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v2/combined_train_csv.csv"
+tc_csv_path = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v3/Bh09v15_tc.csv"
+interpt_csv_path = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v3/Bh09v15_training_sample.csv"
+out_csv_path = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v3/combined_train_csv.csv"
   
 tc_df <- read.csv(file=tc_csv_path, header=TRUE, sep=",",stringsAsFactors=FALSE)
 interpt_df <- read.csv(file=interpt_csv_path, header=TRUE, sep=",",stringsAsFactors=FALSE)
 
 n_pix = nrow(interpt_df)
 out_tab = array(NA,dim=c(n_pix, 10))
-colnames(out_tab) = c("id","dis_year","agent","ag_label","db","dg","dw","pb","pg","pw")
+colnames(out_tab) = c("shp_id","dis_year","agent","ag_label","db","dg","dw","pb","pg","pw")
 
 # reorder by ID
-interpt_df <- interpt_df[order(interpt_df[,'id']),]
-out_tab[,'id'] <- interpt_df[,'id']
+interpt_df <- interpt_df[order(interpt_df[,'shp_id']),]
+out_tab[,'shp_id'] <- interpt_df[,'shp_id']
 out_tab[,'agent'] <- interpt_df[,'agent']
 out_tab[,'ag_label'] <- interpt_df[,'ag_label']
 

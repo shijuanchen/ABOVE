@@ -8,9 +8,9 @@ library(raster)
 
 # function to abbrevaite paste
 "%+%" <- function(x,y) paste(x,y,sep="")
-out_dir = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v2/"
+out_dir = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v3/"
 tc_dir = "/projectnb/landsat/projects/ABOVE/CCDC/Bh09v15/out_tc_Forest/"
-shp_loc = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v2/training_sample.shp" # can also be a directory
+shp_loc = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v3/training_sample.shp" # can also be a directory
 shp_name = "training_sample" # no .shp
 
 # read the shapefile
@@ -23,7 +23,7 @@ print(npix)
 n_mets = 6 # delta b,g,w pre-d,g,w, and agent
 out_tab = array(NA,dim=c(npix,n_mets*29+1))
 col_names = array(NA, dim=c(n_mets*29+1))
-out_tab[,c(1:1)] = c(pts_df[['id']])
+out_tab[,c(1:1)] = c(pts_df[['shp_id']])
 
 for(year in 1985:2013){
   tc_year = tc_dir%+%"Bh09v15_dTC_F_"%+%toString(year)%+%".tif"
@@ -58,7 +58,7 @@ for(year in 1985:2013){
   dw_ras = raster(tc_year,band=6)
   out_tab[,c(6*n+1)] <- extract(dw_ras,pts_df)
 }
-col_names[1] = "id"
+col_names[1] = "shp_id"
 colnames(out_tab) = col_names
 out_file = out_dir%+%"/Bh09v15_tc.csv"
 write.table(out_tab, file=out_file,sep=",",col.names=T,row.names=F, quote=F)
