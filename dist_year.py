@@ -6,8 +6,8 @@ import numpy as np
 import logging
 logger = logging.getLogger('dist_year')
 
-rf_folder_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest/rf_img_v3'
-output_file_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest/rf_year_v3.tif'
+rf_folder_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v3/rf_map'
+output_file_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v3/rf_year.tif'
 tile_name = 'Bh09v15'
 year_avail = np.arange(1985, 2014, dtype=np.int16)
 
@@ -18,7 +18,7 @@ map_array = np.ones((nrows, ncols, 3), dtype=np.int16) * fill
 # map_array updates everytime when read the image for a new year 
 print(map_array.shape)
 for year in year_avail:
-    rf_file = rf_folder_path+'/'+tile_name+'_dTC_F_' + str(year) +'_rf.tif'
+    rf_file = rf_folder_path+'/'+tile_name+'_dTC_F_or_F_' + str(year) +'_rf.tif'
     print(rf_file)
     ds = gdal.Open(rf_file)
     rf_raster = ds.ReadAsArray()
