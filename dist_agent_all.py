@@ -7,14 +7,14 @@ import logging
 logger = logging.getLogger('dist_year')
 
 rf_folder_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v3/rf_map'
-output_file_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v3/rf_year.tif'
+output_file_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v3/rf_dist_all.tif'
 tile_name = 'Bh09v15'
 year_avail = np.arange(1985, 2014, dtype=np.int16)
 
 nrows=6000
 ncols=6000
 fill = -32767
-map_array = np.ones((nrows, ncols, 5), dtype=np.int16) * fill
+map_array = np.ones((nrows, ncols, 1), dtype=np.int16) * fill
 # map_array updates everytime when read the image for a new year 
 print(map_array.shape)
 for year in year_avail:
@@ -25,23 +25,17 @@ for year in year_avail:
     rf_array = np.array(rf_raster)
     for i in np.arange(0, nrows):
         for j in np.arange(0,ncols):
-            # write year of fire
+            # fire
             pix = rf_array[i, j]
             if int(pix)==1:
-                map_array[i,j,0] = year
-            # write year of insect
+                map_array[i,j,0] = 1
+            # insect
             if int(pix)==2:
-                map_array[i,j,1] = year
-            # write year of logging
+                map_array[i,j,0] = 2
+            # logging
             if int(pix)==3:
-                map_array[i,j,2] = year
-            # write year of recovery
-            if int(pix)==4:
-                map_array[i,j,3] = year
-            # write year of others
-            if int(pix)==5:
-                map_array[i,j,4] = year
-                
+                map_array[i,j,0] = 3
+        
 img_file = gdal.Open(rf_file)
 geo_info = img_file.GetGeoTransform()
 ulx = geo_info[0]
