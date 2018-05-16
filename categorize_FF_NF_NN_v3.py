@@ -5,9 +5,10 @@ import numpy as np
 import logging
 logger = logging.getLogger('dist_year')
 fill = -32767
+tile_name = 'Bh09v14'
 
 def classify_FF(FF_tc_folder_path, FF_output_folder_path):
-    tile_name = 'Bh09v15'
+
     year_avail = np.arange(1986, 2014, dtype=np.int16)
 
     nrows=6000
@@ -47,7 +48,6 @@ def classify_FF(FF_tc_folder_path, FF_output_folder_path):
         write_output(map_array, FF_outfile, grid_info, gdal_frmt, band_names=None, ndv=fill)
 
 def classify_NF(NF_tc_folder_path, NF_output_folder_path):
-    tile_name = 'Bh09v15'
     year_avail = np.arange(1986, 2014, dtype=np.int16)
 
     nrows=6000
@@ -84,7 +84,7 @@ def classify_NF(NF_tc_folder_path, NF_output_folder_path):
         write_output(map_array, NF_outfile, grid_info, gdal_frmt, band_names=None, ndv=fill)
 
 def classify_NN(NN_tc_folder_path, NN_output_folder_path):
-    tile_name = 'Bh09v15'
+
     year_avail = np.arange(1986, 2014, dtype=np.int16)
 
     nrows=6000
@@ -197,19 +197,26 @@ def write_output(raster, output, grid_info, gdal_frmt, band_names=None, ndv=fill
 
     ds = None
 
-
+tc_folder_path = r'/projectnb/landsat/projects/ABOVE/CCDC/Bh09v14/out_tc_4type'
+output_folder_path = r'/projectnb/landsat/projects/ABOVE/CCDC/Bh09v14/out_category'
 
 # process FF
-FF_tc_folder_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/FF'
-FF_output_folder_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/FF_class'
+#FF_tc_folder_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/FF'
+#FF_output_folder_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/FF_class'
+FF_tc_folder_path = tc_folder_path
+FF_output_folder_path = output_folder_path
 classify_FF(FF_tc_folder_path, FF_output_folder_path)
 
 # process NF
-NF_tc_folder_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/NF'
-NF_output_folder_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/NF_class'
+#NF_tc_folder_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/NF'
+#NF_output_folder_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/NF_class'
+NF_tc_folder_path = tc_folder_path
+NF_output_folder_path = output_folder_path
 classify_NF(NF_tc_folder_path, NF_output_folder_path)
 
 # process NN
-NN_tc_folder_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/NN'
-NN_output_folder_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/NN_class'
+#NN_tc_folder_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/NN'
+#NN_output_folder_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/NN_class'
+NN_tc_folder_path = tc_folder_path
+NN_output_folder_path = output_folder_path
 classify_NN(NN_tc_folder_path, NN_output_folder_path)

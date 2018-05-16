@@ -7,11 +7,12 @@
 library(rgdal)
 library(raster)
 
-tc_dir = "/projectnb/landsat/projects/ABOVE/CCDC/Bh09v15/out_tc_pre/"
-LC_map_dir = '/projectnb/landsat/users/shijuan/above/bh09v15/LCmap/'
-output_dir = "/projectnb/landsat/projects/ABOVE/CCDC/Bh09v15/out_tc_4type/"
+tile_name = 'Bh09v14'
+tc_dir = "/projectnb/landsat/projects/ABOVE/CCDC/Bh09v14/out_tc_pre/"
+LC_map_dir = "/projectnb/modislc/users/jonwang/data/rf/rast/tc_20180416_noGeo_k55_pam_rf/Bh09v14/remap/"
+output_dir = "/projectnb/landsat/projects/ABOVE/CCDC/Bh09v14/out_tc_4type/"
 
-tile_name = 'Bh09v15'
+
 
 file_name_FF = paste0(tile_name, '_dTC_FF_')
 file_name_FN = paste0(tile_name, '_dTC_FN_')
