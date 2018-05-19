@@ -8,16 +8,16 @@ library(raster)
 
 # function to abbrevaite paste
 "%+%" <- function(x,y) paste(x,y,sep="")
-out_dir = "/projectnb/landsat/users/shijuan/above/bh14v14/"
-tc_dir = "/projectnb/landsat/projects/ABOVE/CCDC/Bh14v14/out_tc_pre/"
-shp_loc = "/projectnb/landsat/users/shijuan/above/bh14v14/bh14v14_training_data_pts.shp" # can also be a directory
-shp_name = "bh14v14_training_data_pts" # no .shp
-tile_name = "Bh14v14"
-#out_dir = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v3/"
-#tc_dir = "/projectnb/landsat/projects/ABOVE/CCDC/Bh09v15/out_tc_pre/"
-#shp_loc = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v3/training_sample.shp" # can also be a directory
-#shp_name = "training_sample"
-#tile_name = 'Bh09v15'
+#out_dir = "/projectnb/landsat/users/shijuan/above/bh14v14/"
+#tc_dir = "/projectnb/landsat/projects/ABOVE/CCDC/Bh14v14/out_tc_pre/"
+#shp_loc = "/projectnb/landsat/users/shijuan/above/bh14v14/bh14v14_training_data.shp" # can also be a directory
+#shp_name = "bh14v14_training_data" # no .shp
+
+out_dir = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v3/"
+tc_dir = "/projectnb/landsat/projects/ABOVE/CCDC/Bh09v15/out_tc_pre/"
+shp_loc = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v3/training_sample.shp" # can also be a directory
+shp_name = "training_sample"
+tile_name = 'Bh09v15'
 # read the shapefile
 pts_df = readOGR(shp_loc, shp_name)
 #print(pts_df)
@@ -66,7 +66,7 @@ for(year in 1985:2013){
 }
 col_names[1] = "shp_id"
 colnames(out_tab) = col_names
-out_file = out_dir%+%tile_name%+%"_tc.csv"
+out_file = out_dir%+%"/test_tc.csv"
 write.table(out_tab, file=out_file,sep=",",col.names=T,row.names=F, quote=F)
 
 

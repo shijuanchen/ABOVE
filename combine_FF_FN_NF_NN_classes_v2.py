@@ -5,7 +5,7 @@ import numpy as np
 import logging
 logger = logging.getLogger('dist_year')
 fill = -32767
-tile_name = 'Bh09v14'
+tile_name = 'Bh14v14'
 def combine_FF_FN_NF_NN_class(FF_folder_path, FN_folder_path, NF_folder_path, NN_folder_path, output_folder_path):
     
     year_avail = np.arange(1986, 2014, dtype=np.int16)
@@ -19,6 +19,7 @@ def combine_FF_FN_NF_NN_class(FF_folder_path, FN_folder_path, NF_folder_path, NN
         FN_file = FN_folder_path+'/'+tile_name+'_dTC_FN_' + str(year) +'_rf.tif'
         NF_file = NF_folder_path+'/'+tile_name+'_dTC_NF_' + str(year) +'_cl.tif'
         NN_file = NN_folder_path+'/'+tile_name+'_dTC_NN_' + str(year) +'_cl.tif'
+        NN_file_rf = NN_folder_path+'/'+tile_name+'_dTC_NN_' + str(year) +'_rf.tif'
 
         FF_ds = gdal.Open(FF_file)
         FF_raster = FF_ds.ReadAsArray()
@@ -35,12 +36,20 @@ def combine_FF_FN_NF_NN_class(FF_folder_path, FN_folder_path, NF_folder_path, NN
         NN_ds = gdal.Open(NN_file)
         NN_raster = NN_ds.ReadAsArray()
         NN_array = np.array(NN_raster)
-        # write all 15 classes
+        
+        NN_ds_rf = gdal.Open(NN_file_rf)
+        NN_raster_rf = NN_ds_rf.ReadAsArray()
+        NN_array_rf = np.array(NN_raster_rf)
+        
+        # write all 16 classes
         for i in np.arange(0, nrows):
             for j in np.arange(0,ncols):
-                # get category, if there is change, one value should be 1-15, the other three should be -32767, so we take the max
+                # get category, if there is change, one value should be 1-15 or 20-21, the other three should be -32767, so we take the max
                 # if there is no change. max is -32767
-                category = max(FF_array[i, j], FN_array[i, j], NF_array[i, j], NN_array[i, j])
+                
+                category = max(FF_array[i, j], FN_array[i, j], NF_array[i, j], NN_array[i, j], NN_array_rf[i, j])
+                if category == 21:
+                    category = NN_array[i, j]
                 map_array[i, j, 0] = int(category)
         outfile = output_folder_path+'/'+tile_name+'_FF_FN_NF_NN_' + str(year) +'_cl.tif'
             
@@ -109,11 +118,11 @@ def write_output(raster, output, grid_info, gdal_frmt, band_names=None, ndv=fill
 
     ds = None
 
-category_folder = r'/projectnb/landsat/projects/ABOVE/CCDC/Bh09v14/out_category'
+category_folder = r'/projectnb/landsat/projects/ABOVE/CCDC/'+tile_name+'/out_category'
 FF_folder_path = category_folder
 FN_folder_path = category_folder
 NF_folder_path = category_folder
 NN_folder_path = category_folder
-output_folder_path = r'/projectnb/landsat/projects/ABOVE/CCDC/Bh09v14/out_classes'
+output_folder_path = r'/projectnb/landsat/projects/ABOVE/CCDC/'+tile_name+'/out_classes'
 combine_FF_FN_NF_NN_class(FF_folder_path,FN_folder_path,NF_folder_path,NN_folder_path, output_folder_path)
 

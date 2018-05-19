@@ -1,8 +1,8 @@
 # This script reorganize the csv data sheets. 
 rm(list=ls())
-tc_csv_path = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v3/Bh09v15_tc.csv"
-interpt_csv_path = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v3/Bh09v15_training_sample.csv"
-out_csv_path = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v3/combined_train_csv.csv"
+tc_csv_path = "/projectnb/landsat/users/shijuan/above/bh14v14/Bh14v14_tc.csv"
+interpt_csv_path = "/projectnb/landsat/users/shijuan/above/bh14v14/bh14v14_training_data_pts.csv"
+out_csv_path = "/projectnb/landsat/users/shijuan/above/bh14v14/bh14v14_combined.csv"
   
 tc_df <- read.csv(file=tc_csv_path, header=TRUE, sep=",",stringsAsFactors=FALSE)
 interpt_df <- read.csv(file=interpt_csv_path, header=TRUE, sep=",",stringsAsFactors=FALSE)

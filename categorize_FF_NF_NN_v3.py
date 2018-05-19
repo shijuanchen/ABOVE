@@ -5,7 +5,7 @@ import numpy as np
 import logging
 logger = logging.getLogger('dist_year')
 fill = -32767
-tile_name = 'Bh09v14'
+tile_name = 'Bh14v14'
 
 def classify_FF(FF_tc_folder_path, FF_output_folder_path):
 
@@ -197,8 +197,8 @@ def write_output(raster, output, grid_info, gdal_frmt, band_names=None, ndv=fill
 
     ds = None
 
-tc_folder_path = r'/projectnb/landsat/projects/ABOVE/CCDC/Bh09v14/out_tc_4type'
-output_folder_path = r'/projectnb/landsat/projects/ABOVE/CCDC/Bh09v14/out_category'
+tc_folder_path = r'/projectnb/landsat/projects/ABOVE/CCDC/'+tile_name+'/out_tc_4type'
+output_folder_path = r'/projectnb/landsat/projects/ABOVE/CCDC/'+tile_name+'/out_category'
 
 # process FF
 #FF_tc_folder_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/FF'

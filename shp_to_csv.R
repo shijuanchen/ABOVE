@@ -16,9 +16,9 @@ library(raster)
 
 # function to abbrevaite paste
 "%+%" <- function(x,y) paste(x,y,sep="")
-out_dir = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v3/assess_sample/"
-shp_loc = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v3/assess_sample/" # directory
-shp_name = "assess_sample_2006_pts" # no .shp
+out_dir = "/projectnb/landsat/users/shijuan/above/bh14v14/"
+shp_loc = "/projectnb/landsat/users/shijuan/above/bh14v14/" # directory
+shp_name = "bh14v14_training_data_pts" # no .shp
 
 # read the shapefile
 pts_df = readOGR(shp_loc, shp_name)
