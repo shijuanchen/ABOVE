@@ -7,7 +7,7 @@
 library(rgdal)
 library(raster)
 "%+%" <- function(x,y) paste(x,y,sep="")
-tile_name = 'Bh14v14'
+tile_name = 'Bh12v10'
 tc_dir = "/projectnb/landsat/projects/ABOVE/CCDC/"%+%tile_name%+%"/out_tc_pre/"
 LC_map_dir = "/projectnb/modislc/users/jonwang/data/rf/rast/tc_20180416_noGeo_k55_pam_rf/"%+%tile_name%+%"/remap/"
 output_dir = "/projectnb/landsat/projects/ABOVE/CCDC/"%+%tile_name%+%"/out_tc_4type/"

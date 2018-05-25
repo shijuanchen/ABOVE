@@ -7,12 +7,14 @@
 library(rgdal)
 library(raster)
 "%+%" <- function(x,y) paste(x,y,sep="")
-tile_name = 'Bh12v10'
+#tile_name = 'Bh12v11'
+args <- commandArgs(trailingOnly=TRUE)
+tile_name <- args[1]
 tc_dir = "/projectnb/landsat/projects/ABOVE/CCDC/"%+%tile_name%+%"/out_tc_pre/"
 LC_map_dir = "/projectnb/modislc/users/jonwang/data/rf/rast/tc_20180416_noGeo_k55_pam_rf/"%+%tile_name%+%"/remap/"
 output_dir = "/projectnb/landsat/projects/ABOVE/CCDC/"%+%tile_name%+%"/out_tc_4type/"
 
-
+dir.create(output_dir)
 
 file_name_FF = paste0(tile_name, '_dTC_FF_')
 file_name_FN = paste0(tile_name, '_dTC_FN_')
