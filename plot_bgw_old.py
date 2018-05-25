@@ -157,10 +157,7 @@ def map_bgw(npz_file_path, img_file_path, outdir_path):
     fill = -32767
     nrows = 6000
     ncols = 6000
-    # comment this when running products
-    # n_mets = 3
-    # n_mets = 4
-    n_mets = 6
+    n_mets = 3
     for year in year_avail:
         map_array = np.ones((nrows, ncols, n_mets), dtype=np.int16) * int(fill)
         for chunk in data_arr:
@@ -181,23 +178,13 @@ def map_bgw(npz_file_path, img_file_path, outdir_path):
                         loc_yr = 10*i+2
                 
                 if loc_yr > 0:
-                    # add dnbr temporarily, please comment it when running the product
-                    # dnbr = pix[loc_yr + 3]    # ******comment me****** # 
-                    # add pre_tc to the map
-                    bb = pix[loc_yr + 4]
-                    bg = pix[loc_yr + 6]
-                    bw = pix[loc_yr + 8]
                     db = pix[loc_yr + 5]
                     dg = pix[loc_yr + 7]
                     dw = pix[loc_yr + 9]
-                    if abs(db) < 10000 and abs(dg) < 10000 and abs(dw) < 10000:  # and abs(dnbr)<10000:
+                    if abs(db) < 10000 and abs(dg) < 10000 and abs(dw) < 10000:
                         map_array[x, y, 0] = db
                         map_array[x, y, 1] = dg
                         map_array[x, y, 2] = dw
-                        map_array[x, y, 3] = bb
-                        map_array[x, y, 4] = bg
-                        map_array[x, y, 5] = bw
-                        # map_array[x, y, 3] = dnbr
         tile_name = npz_file_path.split('.')[0].split('/')[-1]
         output = "{0}/{1}_dTC_{2}.tif".format(outdir_path, tile_name, year)
         img_file = gdal.Open(img_file_path)
@@ -280,9 +267,7 @@ def write_output(raster, output, grid_info, gdal_frmt, band_names=None, ndv=-999
 def main(tile_name):
 	npz_file_path = r'/projectnb/landsat/projects/ABOVE/CCDC/{0}/{0}.all_breaks.npy.npz'.format(tile_name)
 	img_file_path = r'/projectnb/landsat/projects/ABOVE/CCDC/{0}/out_tif/{0}_1984.tif'.format(tile_name)
-	# change the outdir_path temporarily, please replace it when running the product
-	# outdir_path = r'/projectnb/landsat/projects/ABOVE/CCDC/{0}/out_tc'.format(tile_name)  # ******uncomment me****** #
-	outdir_path = r'/projectnb/landsat/projects/ABOVE/CCDC/{0}/out_tc_pre'.format(tile_name)
+	outdir_path = r'/projectnb/landsat/projects/ABOVE/CCDC/{0}/out_tc'.format(tile_name)
 	map_bgw(npz_file_path, img_file_path, outdir_path)
 
 main()
