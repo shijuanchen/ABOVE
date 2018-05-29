@@ -1,0 +1,9 @@
+/projectnb/landsat/projects/ABOVE/CCDC/Bh03v02
+/projectnb/landsat/projects/ABOVE/CCDC/Bh03v02/Bh03v02.h5
+/projectnb/landsat/users/shijuan/miniconda3/envs/yatsm_v0.6_par/lib/python3.6/site-packages/statsmodels/compat/pandas.py:56: FutureWarning: The pandas.core.datetools module is deprecated and will be removed in a future version. Please use the pandas.tseries module instead.
+  from pandas.core import datetools
+/usr3/graduate/shijuan/codes/above/yatsm_v0.6_par/yatsm/mapping/changes.py:328: RuntimeWarning: overflow encountered in short_scalars
+  out[i] = 10000*((ref[i,0]-ref[i,1])/(ref[i,0]+ref[i,1]))
+Type change specified. Start your engines....
+3066.687555485987
+Finished submitting tile Bh03v02

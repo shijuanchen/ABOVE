@@ -1,0 +1,7 @@
+/projectnb/landsat/projects/ABOVE/CCDC/Bh01v02
+/projectnb/landsat/projects/ABOVE/CCDC/Bh01v02/Bh01v02.h5
+/projectnb/landsat/users/shijuan/miniconda3/envs/yatsm_v0.6_par/lib/python3.6/site-packages/statsmodels/compat/pandas.py:56: FutureWarning: The pandas.core.datetools module is deprecated and will be removed in a future version. Please use the pandas.tseries module instead.
+  from pandas.core import datetools
+Type change specified. Start your engines....
+919.5841157051036
+Finished submitting tile Bh01v02
