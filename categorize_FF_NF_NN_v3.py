@@ -3,11 +3,11 @@
 from osgeo import gdal, gdal_array, osr, ogr
 import numpy as np
 import logging
+import click
 logger = logging.getLogger('dist_year')
 fill = -32767
-tile_name = 'Bh14v14'
 
-def classify_FF(FF_tc_folder_path, FF_output_folder_path):
+def classify_FF(tile_name, FF_tc_folder_path, FF_output_folder_path):
 
     year_avail = np.arange(1986, 2014, dtype=np.int16)
 
@@ -47,7 +47,7 @@ def classify_FF(FF_tc_folder_path, FF_output_folder_path):
         gdal_frmt = 'GTiff'
         write_output(map_array, FF_outfile, grid_info, gdal_frmt, band_names=None, ndv=fill)
 
-def classify_NF(NF_tc_folder_path, NF_output_folder_path):
+def classify_NF(tile_name, NF_tc_folder_path, NF_output_folder_path):
     year_avail = np.arange(1986, 2014, dtype=np.int16)
 
     nrows=6000
@@ -83,7 +83,7 @@ def classify_NF(NF_tc_folder_path, NF_output_folder_path):
         gdal_frmt = 'GTiff'
         write_output(map_array, NF_outfile, grid_info, gdal_frmt, band_names=None, ndv=fill)
 
-def classify_NN(NN_tc_folder_path, NN_output_folder_path):
+def classify_NN(tile_name, NN_tc_folder_path, NN_output_folder_path):
 
     year_avail = np.arange(1986, 2014, dtype=np.int16)
 
@@ -197,26 +197,17 @@ def write_output(raster, output, grid_info, gdal_frmt, band_names=None, ndv=fill
 
     ds = None
 
-tc_folder_path = r'/projectnb/landsat/projects/ABOVE/CCDC/'+tile_name+'/out_tc_4type'
-output_folder_path = r'/projectnb/landsat/projects/ABOVE/CCDC/'+tile_name+'/out_category'
+@click.command()
+@click.option('--tile_name', default='Bh04v06', help='Name of the tile, for example: Bh04v06')
+def main(tile_name):
 
-# process FF
-#FF_tc_folder_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/FF'
-#FF_output_folder_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/FF_class'
-FF_tc_folder_path = tc_folder_path
-FF_output_folder_path = output_folder_path
-classify_FF(FF_tc_folder_path, FF_output_folder_path)
+    tc_folder_path = r'/projectnb/landsat/projects/ABOVE/CCDC/{0}/out_tc_4type'.format(tile_name)
+    output_folder_path = r'/projectnb/landsat/projects/ABOVE/CCDC/{0}/out_category'.format(tile_name)
 
-# process NF
-#NF_tc_folder_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/NF'
-#NF_output_folder_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/NF_class'
-NF_tc_folder_path = tc_folder_path
-NF_output_folder_path = output_folder_path
-classify_NF(NF_tc_folder_path, NF_output_folder_path)
+    classify_FF(tile_name, tc_folder_path, output_folder_path)
+    classify_NF(tile_name, tc_folder_path, output_folder_path)
+    classify_NN(tile_name, tc_folder_path, output_folder_path)
 
-# process NN
-#NN_tc_folder_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/NN'
-#NN_output_folder_path = r'/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/NN_class'
-NN_tc_folder_path = tc_folder_path
-NN_output_folder_path = output_folder_path
-classify_NN(NN_tc_folder_path, NN_output_folder_path)
+main()
+
+

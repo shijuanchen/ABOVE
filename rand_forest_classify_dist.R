@@ -6,13 +6,16 @@ library(randomForest)
 library(rgdal)
 library(raster)
 "%+%" <- function(x,y) paste(x,y,sep="")
-tile_name = 'Bh12v10'
+#tile_name = 'Bh12v10'
+args <- commandArgs(trailingOnly=TRUE)
+tile_name <- args[1]
 train_csv_path_FN = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/combined_train_dist.csv"
 train_csv_path_NN = "/projectnb/landsat/users/shijuan/above/bh14v14/bh14v14_combined.csv"
 #img_dir = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/FN/"
 #output_dir = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/FN_class/"
 img_dir = "/projectnb/landsat/projects/ABOVE/CCDC/"%+%tile_name%+%"/out_tc_4type/"
 output_dir = "/projectnb/landsat/projects/ABOVE/CCDC/"%+%tile_name%+%"/out_category/"
+dir.create(output_dir)
 
 agent_train_FN <- read.csv(file=train_csv_path_FN,header=T,colClasses=c(agent="character"))
 agent_train_FN <- agent_train_FN[complete.cases(agent_train_FN),]

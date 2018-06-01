@@ -5,8 +5,8 @@ import numpy as np
 import logging
 logger = logging.getLogger('dist_year')
 fill = -32767
-tile_name = 'Bh14v14'
-def combine_FF_FN_NF_NN_class(FF_folder_path, FN_folder_path, NF_folder_path, NN_folder_path, output_folder_path):
+
+def combine_FF_FN_NF_NN_class(tile_name, category_folder, output_folder_path):
     
     year_avail = np.arange(1986, 2014, dtype=np.int16)
 
@@ -15,11 +15,11 @@ def combine_FF_FN_NF_NN_class(FF_folder_path, FN_folder_path, NF_folder_path, NN
     
     for year in year_avail:
         map_array = np.ones((nrows, ncols, 1), dtype=np.int16) * fill
-        FF_file = FF_folder_path+'/'+tile_name+'_dTC_FF_' + str(year) +'_cl.tif'
-        FN_file = FN_folder_path+'/'+tile_name+'_dTC_FN_' + str(year) +'_rf.tif'
-        NF_file = NF_folder_path+'/'+tile_name+'_dTC_NF_' + str(year) +'_cl.tif'
-        NN_file = NN_folder_path+'/'+tile_name+'_dTC_NN_' + str(year) +'_cl.tif'
-        NN_file_rf = NN_folder_path+'/'+tile_name+'_dTC_NN_' + str(year) +'_rf.tif'
+        FF_file = category_folder+'/'+tile_name+'_dTC_FF_' + str(year) +'_cl.tif'
+        FN_file = category_folder+'/'+tile_name+'_dTC_FN_' + str(year) +'_rf.tif'
+        NF_file = category_folder+'/'+tile_name+'_dTC_NF_' + str(year) +'_cl.tif'
+        NN_file = category_folder+'/'+tile_name+'_dTC_NN_' + str(year) +'_cl.tif'
+        NN_file_rf = category_folder+'/'+tile_name+'_dTC_NN_' + str(year) +'_rf.tif'
 
         FF_ds = gdal.Open(FF_file)
         FF_raster = FF_ds.ReadAsArray()
@@ -118,11 +118,13 @@ def write_output(raster, output, grid_info, gdal_frmt, band_names=None, ndv=fill
 
     ds = None
 
-category_folder = r'/projectnb/landsat/projects/ABOVE/CCDC/'+tile_name+'/out_category'
-FF_folder_path = category_folder
-FN_folder_path = category_folder
-NF_folder_path = category_folder
-NN_folder_path = category_folder
-output_folder_path = r'/projectnb/landsat/projects/ABOVE/CCDC/'+tile_name+'/out_classes'
-combine_FF_FN_NF_NN_class(FF_folder_path,FN_folder_path,NF_folder_path,NN_folder_path, output_folder_path)
+@click.command()
+@click.option('--tile_name', default='Bh04v06', help='Name of the tile, for example: Bh04v06')
+def main(tile_name):
+
+    category_folder = r'/projectnb/landsat/projects/ABOVE/CCDC/{0}/out_category'.format(tile_name)
+    output_folder_path = r'/projectnb/landsat/projects/ABOVE/CCDC/{0}/out_classes'.format(tile_name)
+    combine_FF_FN_NF_NN_class(tile_name, category_folder, output_folder_path)
+    
+main()
 
