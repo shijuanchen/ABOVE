@@ -7,14 +7,15 @@
 
 tile=$1
 out_dir="/projectnb/landsat/projects/ABOVE/CCDC/$tile/out_category"
-if [ ! -d "$folder" ];
+if [ ! -d "$out_dir" ];
     then
-        mkdir out_dir
+        mkdir $out_dir
         module purge
         source /projectnb/landsat/users/shijuan/miniconda3/bin/activate yatsm_v0.6_par
         python /usr3/graduate/shijuan/Desktop/my_ABOVE_git/categorize_FF_NF_NN_v3.py --tile_name $tile
         source deactivate
     else
         echo "$out_dir exists!" 
+        exit 1
 fi
 echo "Finished submitting tile $tile"

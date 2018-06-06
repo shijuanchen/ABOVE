@@ -1,7 +1,7 @@
 #!/bin/bash -l
 
 #Time limit
-#$ -l h_rt=10:00:00
+#$ -l h_rt=24:00:00
 
 #Specify the name of the job
 #$ -N mask_4typest
