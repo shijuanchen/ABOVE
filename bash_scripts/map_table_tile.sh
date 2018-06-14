@@ -1,6 +1,6 @@
 #!/bin/bash -l
 #$ -V
-#$ -l h_rt=24:00:00
+#$ -l h_rt=120:00:00
 #$ -N YATSM_map
 #$ -j y
 #$ -l mem_total=98G

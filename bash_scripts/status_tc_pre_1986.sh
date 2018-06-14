@@ -1,11 +1,11 @@
 #!/bin/bash 
 tile=$1
 counter=0
-output="ABOVE_tc_pre_status_2013.txt"
+output="ABOVE_tc_pre_status_1986.txt"
 while read -r line
 do  
     tile_name=$(echo $line | cut -c 1-7)
-    tc_pre_file="/projectnb/landsat/projects/ABOVE/CCDC/$tile_name/out_tc_pre/"$tile_name"_dTC_2013.tif"
+    tc_pre_file="/projectnb/landsat/projects/ABOVE/CCDC/$tile_name/out_tc_pre/"$tile_name"_dTC_1986.tif"
     if [ -f $tc_pre_file ];
     then
         echo "$tile_name Y" >> $output
