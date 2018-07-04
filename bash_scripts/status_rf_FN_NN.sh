@@ -1,13 +1,13 @@
 #!/bin/bash 
 tile=$1
+output="ABOVE_rf_FN_NN.txt"
+>"ABOVE_rf_FN_NN.txt"
 counter=0
-output="ABOVE_tc_pre_status_2013.txt"
->"ABOVE_tc_pre_status_2013.txt"
 while read -r line
 do  
     tile_name=$(echo $line | cut -c 1-7)
-    tc_pre_file="/projectnb/landsat/projects/ABOVE/CCDC/$tile_name/out_tc_pre/"$tile_name"_dTC_2013.tif"
-    if [ -f $tc_pre_file ];
+    rf_NN_2013="/projectnb/landsat/projects/ABOVE/CCDC/$tile_name/out_category/"$tile_name"_dTC_NN_2013_rf.tif"
+    if [ -f $rf_NN_2013 ];
     then
         echo "$tile_name Y" >> $output
         counter=$((counter+1))
@@ -15,4 +15,4 @@ do
         echo "$tile_name N" >> $output
     fi
 done < "ABOVE_tile_list.txt"
-echo "Number of tiles with dtc change maps: $counter."
+echo "Number of tiles with random forest for FN and NN :$counter."

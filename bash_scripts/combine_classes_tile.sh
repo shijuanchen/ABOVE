@@ -1,6 +1,6 @@
 #!/bin/bash -l
 #$ -V
-#$ -l h_rt=24:00:00
+#$ -l h_rt=48:00:00
 #$ -N combine_classes
 #$ -j y
 #$ -l mem_total=98G
@@ -10,9 +10,6 @@ out_dir="/projectnb/landsat/projects/ABOVE/CCDC/$tile/out_classes"
 if [ ! -d "$out_dir" ];
     then
         mkdir $out_dir
-        echo $out_dir
-    else
-        echo "$out_dir exists!"         
 fi       
 module purge
 source /projectnb/landsat/users/shijuan/miniconda3/bin/activate yatsm_v0.6_par
