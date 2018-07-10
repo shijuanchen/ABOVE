@@ -3,6 +3,7 @@
 from osgeo import gdal, gdal_array, osr, ogr
 import numpy as np
 import logging
+import click
 logger = logging.getLogger('dist_year')
 fill = -32767
 
@@ -44,7 +45,7 @@ def combine_FF_FN_NF_NN_class(tile_name, category_folder, output_folder_path):
         # write all 16 classes
         for i in np.arange(0, nrows):
             for j in np.arange(0,ncols):
-                # get category, if there is change, one value should be 1-15 or 20-21, the other three should be -32767, so we take the max
+                # get category, if there is change, one value should be 1-15 or 19-21, the other three should be -32767, so we take the max
                 # if there is no change. max is -32767
                 
                 category = max(FF_array[i, j], FN_array[i, j], NF_array[i, j], NN_array[i, j], NN_array_rf[i, j])

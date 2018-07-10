@@ -12,10 +12,10 @@ library(raster)
 #tile_name = "Bh12v10"
 args <- commandArgs(trailingOnly=TRUE)
 tile_name <- args[1]
-out_dir = "/projectnb/landsat/users/shijuan/above/training_data/"%+%tile_name%+%"/"
+out_dir = "/projectnb/landsat/users/shijuan/above/training_data/0618_training/"
 tc_dir = "/projectnb/landsat/projects/ABOVE/CCDC/"%+%tile_name%+%"/out_tc_4type/"
-shp_loc = "/projectnb/landsat/users/shijuan/above/training_data/"%+%tile_name%+%"/"%+%tile_name%+%"_pts.shp" # can also be a directory
-shp_name = tile_name%+%"_pts" # no .shp
+shp_loc = "/projectnb/landsat/users/shijuan/above/training_data/0618_training/FN/"%+%tile_name%+%"_pts_FN.shp"
+shp_name = tile_name%+%"_pts_FN" # no .shp
 
 #out_dir = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v3/"
 #tc_dir = "/projectnb/landsat/projects/ABOVE/CCDC/Bh09v15/out_tc_pre/"
@@ -35,7 +35,7 @@ col_names = array(NA, dim=c(n_mets*29+1))
 out_tab[,c(1:1)] = c(pts_df[['shp_id']])  # if polygon, cannot do it this way
 
 for(year in 1986:2013){
-  tc_year = tc_dir%+%tile_name%+%"_dTC_NN_"%+%toString(year)%+%".tif"
+  tc_year = tc_dir%+%tile_name%+%"_dTC_FN_"%+%toString(year)%+%".tif"
   print(tc_year)
   n = year - 1985
   # extract delta brightness
@@ -70,7 +70,7 @@ for(year in 1986:2013){
 }
 col_names[1] = "shp_id"
 colnames(out_tab) = col_names
-out_file = out_dir%+%tile_name%+%"_tc.csv"
+out_file = out_dir%+%tile_name%+%"_tc_FN.csv"
 write.table(out_tab, file=out_file,sep=",",col.names=T,row.names=F, quote=F)
 
 
