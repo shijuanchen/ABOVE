@@ -1,0 +1,16 @@
+OGR data source with driver: ESRI Shapefile 
+Source: "/projectnb/landsat/users/shijuan/above/training_data/0725_training/NN/Bh05v03_pts_NN.shp", layer: "Bh05v03_pts_NN"
+with 165 features
+It has 4 fields
+[1] 165
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh05v03/out_tc_4type/Bh05v03_dTC_NN_1986.tif"
+non finite transformation detected:
+coords.x1 coords.x2                     
+ -2421376   3962053       Inf       Inf 
+extract_tc_NN for tile Bh05v03  done.
+OGR data source with driver: ESRI Shapefile 
+Source: "/projectnb/landsat/users/shijuan/above/training_data/0725_training/NN/Bh05v03_pts_NN.shp", layer: "Bh05v03_pts_NN"
+with 165 features
+It has 4 fields
+shp_to_csv_NN for tile Bh05v03  done.
+combine_train_csv_NN for tile Bh05v03  done.

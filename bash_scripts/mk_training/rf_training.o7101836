@@ -1,0 +1,40 @@
+OGR data source with driver: ESRI Shapefile 
+Source: "/projectnb/landsat/users/shijuan/above/training_data/0725_training/NN/Bh08v09_pts_NN.shp", layer: "Bh08v09_pts_NN"
+with 115 features
+It has 4 fields
+[1] 115
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_1986.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_1987.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_1988.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_1989.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_1990.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_1991.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_1992.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_1993.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_1994.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_1995.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_1996.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_1997.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_1998.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_1999.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_2000.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_2001.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_2002.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_2003.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_2004.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_2005.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_2006.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_2007.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_2008.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_2009.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_2010.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_2011.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_2012.tif"
+[1] "/projectnb/landsat/projects/ABOVE/CCDC/Bh08v09/out_tc_4type/Bh08v09_dTC_NN_2013.tif"
+extract_tc_NN for tile Bh08v09  done.
+OGR data source with driver: ESRI Shapefile 
+Source: "/projectnb/landsat/users/shijuan/above/training_data/0725_training/NN/Bh08v09_pts_NN.shp", layer: "Bh08v09_pts_NN"
+with 115 features
+It has 4 fields
+shp_to_csv_NN for tile Bh08v09  done.
+combine_train_csv_NN for tile Bh08v09  done.

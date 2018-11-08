@@ -22,8 +22,8 @@ library(raster)
 
 args <- commandArgs(trailingOnly=TRUE)
 tile_name <- args[1]
-out_dir = "/projectnb/landsat/users/shijuan/above/training_data/0618_training/FN/"
-shp_loc = "/projectnb/landsat/users/shijuan/above/training_data/0618_training/FN/"%+%tile_name%+%"_pts_FN.shp"
+out_dir = "/projectnb/landsat/users/shijuan/above/training_data/0725_training/FN/"
+shp_loc = "/projectnb/landsat/users/shijuan/above/training_data/0725_training/FN/"%+%tile_name%+%"_pts_FN.shp"
 shp_name = tile_name%+%"_pts_FN" # no .shp
 
 # read the shapefile

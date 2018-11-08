@@ -9,8 +9,8 @@ library(raster)
 #tile_name = 'Bh12v10'
 args <- commandArgs(trailingOnly=TRUE)
 tile_name <- args[1]
-train_csv_path_FN = "/projectnb/landsat/users/shijuan/above/training_data/0618_training/0618_combined_FN.csv"
-train_csv_path_NN = "/projectnb/landsat/users/shijuan/above/training_data/0618_training/0618_combined_NN.csv"
+train_csv_path_FN = "/projectnb/landsat/users/shijuan/above/training_data/0801_training/0731_training_all_FN.csv"
+train_csv_path_NN = "/projectnb/landsat/users/shijuan/above/training_data/0801_training/0731_training_all_NN.csv"
 #img_dir = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/FN/"
 #output_dir = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v4/FN_class/"
 img_dir = "/projectnb/landsat/projects/ABOVE/CCDC/"%+%tile_name%+%"/out_tc_4type/"

@@ -1,0 +1,31 @@
+Loading required package: methods
+Loading required package: sp
+rgdal: version: 1.1-8, (SVN revision 616)
+ Geospatial Data Abstraction Library extensions to R successfully loaded
+ Loaded GDAL runtime: GDAL 1.11.3, released 2015/09/16
+ Path to GDAL shared files: /share/pkg/gdal/1.11.3/install/share/gdal
+ Loaded PROJ.4 runtime: Rel. 4.8.0, 6 March 2012, [PJ_VERSION: 480]
+ Path to PROJ.4 shared files: (autodetected)
+ Linking to sp version: 1.2-1 
+Error in spTransform(xSP, CRSobj, ...) : failure in points 1
+Calls: extract ... spTransform -> spTransform -> spTransform -> spTransform
+In addition: Warning messages:
+1: In .local(x, y, ...) :
+  Transforming SpatialPoints to the CRS of the Raster
+2: In spTransform(xSP, CRSobj, ...) : 165 projected point(s) not finite
+Execution halted
+Loading required package: methods
+Loading required package: sp
+rgdal: version: 1.1-8, (SVN revision 616)
+ Geospatial Data Abstraction Library extensions to R successfully loaded
+ Loaded GDAL runtime: GDAL 1.11.3, released 2015/09/16
+ Path to GDAL shared files: /share/pkg/gdal/1.11.3/install/share/gdal
+ Loaded PROJ.4 runtime: Rel. 4.8.0, 6 March 2012, [PJ_VERSION: 480]
+ Path to PROJ.4 shared files: (autodetected)
+ Linking to sp version: 1.2-1 
+Error in file(file, "rt") : cannot open the connection
+Calls: read.csv -> read.table -> file
+In addition: Warning message:
+In file(file, "rt") :
+  cannot open file '/projectnb/landsat/users/shijuan/above/training_data/0725_training/NN/Bh05v03_tc_NN.csv': No such file or directory
+Execution halted

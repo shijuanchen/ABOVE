@@ -12,9 +12,9 @@ library(raster)
 #tile_name = "Bh12v10"
 args <- commandArgs(trailingOnly=TRUE)
 tile_name <- args[1]
-out_dir = "/projectnb/landsat/users/shijuan/above/training_data/0618_training/FN/"
+out_dir = "/projectnb/landsat/users/shijuan/above/training_data/0725_training/FN/"
 tc_dir = "/projectnb/landsat/projects/ABOVE/CCDC/"%+%tile_name%+%"/out_tc_4type/"
-shp_loc = "/projectnb/landsat/users/shijuan/above/training_data/0618_training/FN/"%+%tile_name%+%"_pts_FN.shp"
+shp_loc = "/projectnb/landsat/users/shijuan/above/training_data/0725_training/FN/"%+%tile_name%+%"_pts_FN.shp"
 shp_name = tile_name%+%"_pts_FN" # no .shp
 
 #out_dir = "/projectnb/landsat/users/shijuan/above/bh09v15/rand_forest_v3/"

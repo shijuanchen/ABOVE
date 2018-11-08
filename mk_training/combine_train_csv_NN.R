@@ -4,7 +4,7 @@ rm(list=ls())
 "%+%" <- function(x,y) paste(x,y,sep="")
 args <- commandArgs(trailingOnly=TRUE)
 tile_name <- args[1]
-out_dir = "/projectnb/landsat/users/shijuan/above/training_data/0618_training/NN/"
+out_dir = "/projectnb/landsat/users/shijuan/above/training_data/0725_training/NN/"
 tc_csv_path = out_dir%+%tile_name%+%"_tc_NN.csv"
 interpt_csv_path = out_dir%+%tile_name%+%"_pts_NN.csv"
 out_csv_path = out_dir%+%tile_name%+%"_combined_NN.csv"
@@ -61,4 +61,4 @@ for(j in 1:n_pix){
     }
   }
 }
-write.table(out_tab,file=out_csv_path,sep=",",col.names=T,row.names=F,quote=F)
+write.table(out_tab,file=out_csv_path,sep=",",col.names=F,row.names=F,quote=F)

@@ -1,0 +1,54 @@
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_1987 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_1987.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_1987.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_1988 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_1988.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_1988.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_1989 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_1989.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_1989.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_1990 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_1990.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_1990.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_1991 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_1991.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_1991.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_1992 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_1992.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_1992.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_1993 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_1993.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_1993.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_1994 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_1994.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_1994.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_1995 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_1995.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_1995.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_1996 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_1996.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_1996.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_1997 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_1997.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_1997.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_1998 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_1998.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_1998.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_1999 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_1999.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_1999.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_2000 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_2000.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_2000.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_2001 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_2001.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_2001.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_2002 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_2002.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_2002.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_2003 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_2003.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_2003.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_2004 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_2004.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_2004.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_2005 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_2005.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_2005.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_2006 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_2006.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_2006.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_2007 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_2007.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_2007.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_2008 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_2008.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_2008.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_2009 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_2009.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_2009.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_2010 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_2010.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_2010.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_2011 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_2011.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_2011.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_2012 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_2012.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_2012.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.
+gdal_rasterize -burn 1 -tr 30 30 -l ABoVE_Fires_year_2013 -a_nodata 0 /projectnb/landsat/users/shijuan/above/ABOVE_fires/shp_year/ABoVE_Fires_year_2013.shp /projectnb/landsat/users/shijuan/above/ABOVE_fires/tif_year/ABoVE_Fires_year_2013.tif
+0...10...20...30...40...50...60...70...80...90...100 - done.

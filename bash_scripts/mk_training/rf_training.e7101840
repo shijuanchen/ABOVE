@@ -1,0 +1,18 @@
+Loading required package: methods
+Loading required package: sp
+rgdal: version: 1.1-8, (SVN revision 616)
+ Geospatial Data Abstraction Library extensions to R successfully loaded
+ Loaded GDAL runtime: GDAL 1.11.3, released 2015/09/16
+ Path to GDAL shared files: /share/pkg/gdal/1.11.3/install/share/gdal
+ Loaded PROJ.4 runtime: Rel. 4.8.0, 6 March 2012, [PJ_VERSION: 480]
+ Path to PROJ.4 shared files: (autodetected)
+ Linking to sp version: 1.2-1 
+Loading required package: methods
+Loading required package: sp
+rgdal: version: 1.1-8, (SVN revision 616)
+ Geospatial Data Abstraction Library extensions to R successfully loaded
+ Loaded GDAL runtime: GDAL 1.11.3, released 2015/09/16
+ Path to GDAL shared files: /share/pkg/gdal/1.11.3/install/share/gdal
+ Loaded PROJ.4 runtime: Rel. 4.8.0, 6 March 2012, [PJ_VERSION: 480]
+ Path to PROJ.4 shared files: (autodetected)
+ Linking to sp version: 1.2-1 
