@@ -10,19 +10,19 @@ fill = -32767
 
 def post_process_smoothing(tile_name, combine_folder, category_folder, lc_folder, output_folder):
     
-    year_avail = np.arange(1986, 2013, dtype=np.int16)
+    year_avail = np.arange(2006, 2007, dtype=np.int16)
     #year_avail = np.arange(1995, 1996, dtype=np.int16)
     nrows=6000
     ncols=6000
 
     for year in year_avail:
         print(year)
-        fire_y0 = r'/projectnb/landsat/users/shijuan/above/ABOVE_fires/test_tiles/output/' + tile_name + '/' \
-                  +tile_name+'_fireBD_'+ str(year-1) + '.tif'
-        fire_y1 = r'/projectnb/landsat/users/shijuan/above/ABOVE_fires/test_tiles/output/' + tile_name + '/' \
-                  +tile_name+'_fireBD_'+ str(year)  + '.tif'
-        fire_y2 = r'/projectnb/landsat/users/shijuan/above/ABOVE_fires/test_tiles/output/' + tile_name + '/' \
-                  +tile_name+'_fireBD_'+ str(year+1) + '.tif'
+        fire_y0 = r'/projectnb/landsat/users/shijuan/above/ABOVE_fires_new/ABOVE_fireDB/' + tile_name + '/' \
+                  +tile_name+'_fireDB_'+ str(year-1) + '.tif'
+        fire_y1 = r'/projectnb/landsat/users/shijuan/above/ABOVE_fires_new/ABOVE_fireDB/' + tile_name + '/' \
+                  +tile_name+'_fireDB_'+ str(year)  + '.tif'
+        fire_y2 = r'/projectnb/landsat/users/shijuan/above/ABOVE_fires_new/ABOVE_fireDB/' + tile_name + '/' \
+                  +tile_name+'_fireDB_'+ str(year+1) + '.tif'
         fdb_ds0 = gdal.Open(fire_y0)
         fdb_raster0 = fdb_ds0.ReadAsArray()
         fdb_array0 = np.array(fdb_raster0)
@@ -99,6 +99,7 @@ def post_process_smoothing(tile_name, combine_folder, category_folder, lc_folder
                             if cc_win_FN:
                                 mode = stats.mode(cc_win_FN, axis=None)
                                 map_array[i, j, 0] = mode[0] 
+                                print(map_array[i, j, 0])
                             # if it is null assign to 19
                             else:
                                 map_array[i, j, 0] = 19
@@ -238,8 +239,8 @@ def write_output(raster, output, grid_info, gdal_frmt, band_names=None, ndv=fill
 @click.option('--tile_name', default='Bh04v06', help='Name of the tile, for example: Bh04v06')
 
 def main(tile_name):
-    combine_folder = r'/projectnb/landsat/projects/ABOVE/CCDC/{0}/out_classes'.format(tile_name)
-    category_folder = r'/projectnb/landsat/projects/ABOVE/CCDC/{0}/out_category'.format(tile_name)
+    combine_folder = r'/projectnb/landsat/projects/ABOVE/CCDC/{0}/new_map/out_classes'.format(tile_name)
+    category_folder = r'/projectnb/landsat/projects/ABOVE/CCDC/{0}/new_map/out_category'.format(tile_name)
     lc_folder = r'/projectnb/modislc/users/jonwang/data/rf/rast/tc_20180416_noGeo_k55_pam_rf/{0}/remap'.format(tile_name)
     output_folder = r'/projectnb/landsat/users/shijuan/above/post_process/smooth_v4/{0}'.format(tile_name)
     post_process_smoothing(tile_name, combine_folder, category_folder, lc_folder, output_folder)
